@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import * as Utils from '../BL'
+import * as Utils from '../services/BL Movies'
 import MovieComp from './Movie'
 import {Button,Container} from '@material-ui/core';
 import InputBase from '@material-ui/core/InputBase';

@@ -1,6 +1,6 @@
 import { responsiveFontSizes } from '@material-ui/core'
 import axios from 'axios'
-import * as Auth from './Auth'
+import * as Auth from '../Auth'
 
 const Url = 'http://localhost:8000/api/movies/'
 

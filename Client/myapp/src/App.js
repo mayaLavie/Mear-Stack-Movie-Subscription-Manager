@@ -1,13 +1,13 @@
 import './App.css';
-import MainPageComp from './MainPage'
-import LoginComp from './Login'
+import MainPageComp from './Components/MainPage'
+import LoginComp from './Components/Login'
 
 import {useHistory} from 'react-router-dom'
 import {AppBar,Toolbar, Container} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import {useEffect,useState} from 'react';
-import {isAuth} from './Auth';
+import {isAuth} from './Components/Auth';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,23 +23,16 @@ const useStyles = makeStyles((theme) => ({
   
 
 function App ()
-{         let history = useHistory();
-        
+{       let history = useHistory();
         let [authStatus, setauthStatus] = useState(false)
 
         let Authorization = async () =>
-
         {  const StatusFromAuth = await isAuth()
-            
-            console.log(StatusFromAuth)
-            setauthStatus(StatusFromAuth);
-            console.log(authStatus);
+            setauthStatus(StatusFromAuth);   
         }
 
         useEffect(() => {
-            
-            Authorization()
-            
+            Authorization()    
         }, [authStatus])
 
         const classes = useStyles();
@@ -53,15 +46,11 @@ function App ()
         <AppBar position="static">
         <Toolbar> <h3>IMDBIL</h3> 
         <h4 className={classes.menuButton}>
-         { authStatus?    sessionStorage["UserName"] : ""}   
+         { authStatus? sessionStorage["UserName"] : ""}   
          </h4>
         </Toolbar>
         </AppBar>
 
-
-      
-     
-  
       {
            authStatus? <MainPageComp/> : <LoginComp/>
       }

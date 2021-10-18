@@ -12,12 +12,12 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 import LoginComp from './Login'
-import MoviesComp from './MoviesSection/Movies'
-import SubscriptionsComp from './Subscriptions'
-import AddMovieComp from './MoviesSection/AddMovie'
-import EditMovieComp from './MoviesSection/EditMovie'
-import EditMemberComp from './EditMember'
-import AddMemberComp from './AddMember'
+import MoviesComp from './Movies/Movies'
+import SubscriptionsComp from './Subscriptions/Subscriptions'
+import AddMovieComp from './Movies/AddMovie'
+import EditMovieComp from './Movies/EditMovie'
+import EditMemberComp from './Members/EditMember'
+import AddMemberComp from './Members/AddMember'
 
 
 const useStyles = makeStyles({
@@ -72,7 +72,6 @@ function MainPageComp (props)
             <Route exact path="/EditMovie/:id" component={EditMovieComp} />
             <Route exact path="/EditMember/:id" component={EditMemberComp} />
             <Route exact path="/AddMember" component={AddMemberComp} />
-
             <Route exact path="/Subscriptions" component={SubscriptionsComp} />
       </Switch>
     

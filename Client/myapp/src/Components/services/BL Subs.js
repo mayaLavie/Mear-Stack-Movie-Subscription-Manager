@@ -1,85 +1,86 @@
 import axios from 'axios'
-import * as Auth from './Auth'
+import * as Auth from '../Auth'
 
-const Url = 'http://localhost:8000/api/members/'
+const Url = 'http://localhost:8000/api/subscriptions/'
 
 
 
-export const getAllMembers = async () =>
+export const getAllSubs = async () =>
+{  
+    let AuthStatus = await Auth.isAuth()
+
+    if(AuthStatus === true)
+    {
+        let resp = await axios.get(Url);
+        return resp.data
+    }
+    else{
+        return alert('You are Not Loggen in')
+    }
+
+  
+}
+
+export const getSubByMovie = async (Movieid) =>
 {
     let AuthStatus = await Auth.isAuth()
 
     if(AuthStatus === true)
     {
-        let resp = await axios.get(Url); 
-        return resp.data
-    }
-    else{
-        return alert('You are Not Loggen in')
-    }
-    
- 
-    
-}
-
-export const getMember = async (id) =>
-{   
-    let AuthStatus = await Auth.isAuth()
-
-    if(AuthStatus === true)
-    {
-        let resp = await axios.get(Url+id);
-        return resp.data
-    }
-    else{
-        return alert('You are Not Loggen in')
-    }
-
-}
-
-
-export const editMember = async (id,Member) =>
-{   
-    let AuthStatus = await Auth.isAuth()
-
-    if(AuthStatus === true)
-    {
-        let resp = await axios.put(Url+id,Member);
-        return resp.data
-    }
-    else{
-        return alert('You are Not Loggen in')
-    }
-
-   
-}
-
-export const deleteMember = async (id) =>
-{   
-    let AuthStatus = await Auth.isAuth()
-
-    if(AuthStatus === true)
-    {
-        let resp = await axios.delete(Url+id);
-        return resp.data
-    }
-    else{
-        return alert('You are Not Loggen in')
-    }
-}
-
-
-export const addMember = async (NewMember) =>
-{   
-    let AuthStatus = await Auth.isAuth()
-
-    if(AuthStatus === true)
-    {
-        let resp = await axios.post(Url,NewMember);
+        let resp = await axios.get('http://localhost:8000/api/subscriptions/Movieid/'+Movieid);
         return resp.data
     }
     else{
         return alert('You are Not Loggen in')
     }
    
+}
+
+
+
+export const getSubByMember = async (Memberid) =>
+{
+    let AuthStatus = await Auth.isAuth()
+
+    if(AuthStatus === true)
+    {
+        let resp = await axios.get('http://localhost:8000/api/subscriptions/Memberid/'+Memberid);
+        return resp.data
+    }
+    else{
+        return alert('You are Not Loggen in')
+    }
+  
+}
+
+export const deleteSubByMember = async (Memberid) =>
+{  
+    let AuthStatus = await Auth.isAuth()
+
+    if(AuthStatus === true)
+    {
+        let resp = await axios.delete('http://localhost:8000/api/subscriptions/ByMemberid/'+Memberid);
+        return resp.data
+    }
+    else{
+        return alert('You are Not Loggen in')
+    }
+    
+
+}
+
+export const addSub = async (NewSub) =>
+{   
+    let AuthStatus = await Auth.isAuth()
+
+    if(AuthStatus === true)
+    {
+        let resp = await axios.post(Url,NewSub);
+        return resp.data  
+    }
+    else{
+        return alert('You are Not Loggen in')
+    }
+    
+    
 }

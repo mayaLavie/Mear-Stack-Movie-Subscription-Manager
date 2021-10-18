@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import * as Utils from '../BL'
+import * as Utils from '../services/BL Movies'
 
 
 function EditMovieComp (props)

@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core'
 import { useState,useEffect} from 'react'
-import * as UtilsMembers from './BL Members'
-import MemberComp from './Member'
+import * as UtilsMembers from './../services/BL Members'
+import MemberComp from './../Members/Member'
 
 import {Button, container} from '@material-ui/core';
 

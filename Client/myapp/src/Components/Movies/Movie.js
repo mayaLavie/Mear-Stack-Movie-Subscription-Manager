@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
-import * as Utils from '../BL'
-import * as UtilsSubs from '../BL Subs'
-import * as UtilsMembers from '../BL Members'
+import * as Utils from '../services/BL Movies'
+import * as UtilsSubs from '../services/BL Subs'
+import * as UtilsMembers from '../services/BL Members'
 
 import React from 'react';
 

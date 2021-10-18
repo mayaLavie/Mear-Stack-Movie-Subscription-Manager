@@ -2,8 +2,8 @@ import { useState,useEffect} from 'react'
 import TextField from '@material-ui/core/TextField'
 import {Button,Container} from '@material-ui/core';
 import Card from '@material-ui/core/Card';
-import * as Utils from './BL'
-import * as UtilsSubs from './BL Subs'
+import * as Utils from '../services/BL Movies'
+import * as UtilsSubs from '../services/BL Subs'
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';

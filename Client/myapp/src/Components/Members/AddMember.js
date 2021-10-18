@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import * as UtilsMembers from './BL Members'
+import * as UtilsMembers from '../services/BL Members'
 
 
 function AddMemberComp (props)
